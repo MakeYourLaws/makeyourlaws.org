@@ -1,0 +1,41 @@
+<script>
+  if (top!= self) {  // frame breaker
+    if (location) top.location.replace(self.location.href)
+    else top.document.location.replace(self.document.location.href);
+  }
+</script>
+<div id="doc" class="yui-t1">
+  <div id="hd" role="banner"><!--header / masthead-->
+    <noscript>
+      <div style="font-size: 1.5em;" class="flash error">
+	Please turn on JavaScript! We actually do need it to function properly.<br/>
+      </div>
+    </noscript>
+    <!-- user header here -->
+  </div>
+  <div id="bd"><!--body-->
+    <div id="yui-main">
+      <div class="yui-b" role="main"><!--primary-->
+	<!-- flashes here -->
+	<div id="content">
+	  {{- block "main" . -}}{{end}}
+	</div>
+      </div><!-- primary -->
+    </div><!-- main -->
+    <div class="yui-b"><!--secondary-->
+      <img src="/images/myl_165.png" alt="Make Your Laws logo" width=165 height=120 />
+      <div class="c i"><strong>This</strong> is what democracy looks like.</div>
+      <ul class="menu">
+	<li>{{.ref . "/main/press" }}</li>
+	<li>Other</li>
+      </ul>
+      <!--
+	  <%= render :partial => 'layouts/menu' %>
+	  <%= render :partial => 'layouts/outlinks' %>
+      -->
+    </div><!-- secondary -->
+  </div><!-- bd -->
+  <div id="ft" role="banner"><!--header / masthead-->
+    <div id="disclaimer">makeyourlaws.org is paid for by Make Your Laws PAC, Inc. (MYL PAC) and not authorized by any candidate or candidate's committee. Contributions or gifts to MYL PAC and/or Make Your Laws Advocacy, Inc. (MYL C4) are not deductible as charitable contributions for Federal income tax purposes. Contributions to Make Your Laws, Inc. (MYL C3) are tax-deductible.</div>
+  </div>
+</div><!--doc -->

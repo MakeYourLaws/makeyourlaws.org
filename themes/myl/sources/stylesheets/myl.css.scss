@@ -1,0 +1,333 @@
+body { font-family: arial,helvetica,clean,sans-serif; }
+
+#ft {
+	margin-top: 1em;
+	 div {
+		float: right;
+	}
+	#disclaimer {
+		font-size: 80%;
+	}
+}
+
+/* i.e. first element of actual content */
+#content *:first-child {
+	margin-top: 0;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 0.5em;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  border: 1px solid red;
+  padding: 0.4em;
+  padding-bottom: 0;
+  margin-bottom: 1.2em;
+  background-color: #f0f0f0;
+}
+
+a { text-decoration: none;
+	color: #0645ad;
+	&:visited { color: #0b0080; }
+	&:active { color: #faa700; }
+	&:hover { text-decoration:underline;}
+	&.close {
+		color:				#f00;
+		text-decoration:	none;
+	}
+}
+
+q {
+	&:before { content: open-quote; }
+	&:after  { content: close-quote; }
+}
+
+pre {
+  background-color: #eee;
+  padding: 0.5em;
+  font-size: 80%;
+}
+
+
+
+outlinks img { border:0; width:32px; height:32px; }
+
+cite:before { content: "\2014 "; }
+
+.light { font-style: italic; font-weight: lighter; font-size: 70%; }
+
+img.gray {
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); /* IE6-9 */
+    filter: alpha(opacity=40); /* msie */
+    opacity: 0.4;
+    zoom: 1;  /* needed to trigger "hasLayout" in IE if no width or height is set */
+}
+
+#toc {
+	float: left;
+	padding-right: 15px;
+	margin-left: 1em;
+	height: 100%;
+}
+
+hr {
+	width:25%;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+ol, ul {
+	/* For setting the first part of list elements, e.g. when they each have multiple paragraphs */
+	&.italic {
+		li *:first-child { font-style: italic; }
+	}
+	&.bold {
+		li *:first-child { font-weight: bold; }
+	}
+}
+
+ol { list-style: decimal;
+	&.alpha { list-style: lower-alpha;
+		li  { list-style: lower-alpha; }
+	}
+}
+
+ul {
+	li { margin-bottom: 0.5em; }
+	&.bullet { list-style: disc outside;
+		li { list-style: disc outside; }
+	}
+	&.flat { list-style: none;
+		li { list-style: none; }
+	}
+	&.flush {
+		margin: 0 0 1ex 0;
+		padding: 0;
+		li {
+			margin: 0 0 0.5ex;
+			padding: 0;
+		}
+		ul { margin: 0 1em;
+			li { margin: 0; }
+		}
+	}
+	&.menu { margin: 1em 0;
+		li {
+			list-style: none;
+			margin-bottom: 0.2em;
+			&.first {
+				border-top: thin solid #d3d3d3;
+			}
+		}
+	}
+	&.inline {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+			display: inline;
+			&:after { content: ", "; }
+			&:last-child:after { content: ""; }
+		}
+	}
+}
+
+img {
+	border: none;
+	vertical-align: bottom;
+}
+
+table { margin-bottom: 0; }
+
+th, td {
+	border: none;
+	padding: 0.1em 0.8em 0.1em 0;
+}
+
+tr.even { background: #F5FFFF; }
+
+.header {
+	float: right;
+	text-align: right;
+	margin: 1em;
+	padding-bottom: 0.5em;
+}
+
+textarea {
+	display: block;
+	padding: 0.75%;
+	width: 98%;
+	border: 1px solid #BDC7D8;
+	height: 5em;
+}
+
+blockquote {
+	border-left: 2px solid #ccc;
+	margin: 0;
+	padding: 0 0.3em;
+}
+
+.tooltip {
+	position: relative; /*this is the key*/
+	cursor: help;
+	span { display: none }
+	&:hover span { /*the span will display just on :hover state*/
+		z-index:		1;
+	    display:		block;
+	    position:		absolute;
+	    top:			1em; /* 1.6em; is prettier a bit, but 1em allows user to mouse in to it easily and thus click links etc */
+		left:			0;
+		border:			thin solid grey;
+		background:		#FFF;
+	  	padding:		.3em .6em;
+		text-align:		left;
+		white-space:	nowrap;
+	}
+	&.left:hover span {
+		left:			auto;
+		right:			0;
+	}
+}
+
+.highlight { background-color: #ffa;
+	&:hover{ background-color: #ff6;
+		span { background-color: #ffe; }
+	}
+}
+
+.flash {
+	text-align: center;
+	padding:	.3em .4em;
+	margin:		0 auto .5em;
+	clear:		both;
+	max-width:	46.923em; /* 610/13 */
+	*max-width:	45.750em; /* 610/13.3333 - for IE */
+	&.error {
+		border: thin solid #8b0000;
+		background: #ffc0cb;
+	}
+	&.notice, &.info {
+		border: thin solid #ff0;
+		background: #ffe;
+	}
+	&.warning {
+		border: thin solid #b8860b;
+		background: #ff0;
+	}
+	.close {
+		float:	right;
+		 a {
+			color:				#f00;
+			text-decoration:	none;
+		}
+	}
+}
+
+.invalid {
+	border: 2px solid red;
+	+ .inline_validation {
+		color: red;
+	/*	content: '✘';*/
+	}
+}
+
+.valid {
+	border: 1px solid blue;
+	 + .inline_validation {
+		color: green;
+	/*    content: '✔';*/
+	}
+}
+
+.errors {
+	color: red;
+}
+
+// These are for use together with footnotes.js.
+#footnotediv { // floating footnote div
+	position:absolute;
+	width:400px;
+	overflow:visible;
+}
+#footnotediv div {
+	background-color:white;
+	padding:3px;
+	padding-left:12px;
+	padding-right:12px;
+	border:1px solid #CDBBB5;
+	box-shadow:#555 0 0 10px;
+	-webkit-box-shadow:#555 0 0 10px;
+	-moz-box-shadow:0 0 10px #555;
+}
+a.footnotebacklink {
+	border-bottom:none;
+}
+// end footnotes
+
+
+
+.required { font-weight: bold; }
+
+.c { text-align: center; }
+
+.r { text-align: right; }
+
+.l { text-align: left; }
+
+.j { text-align: justify; }
+
+.b { font-weight: bold; }
+
+.i { font-style: italic; }
+
+.mb-n { margin-bottom: 0; }
+
+.small { font-size: smaller; }
+
+.primary-1 { background-color: #009D91 }
+.primary-2 { background-color: #1D766F }
+.primary-3 { background-color: #00665E }
+.primary-4 { background-color: #33CEC3 }
+.primary-5 { background-color: #5DCEC6 }
+
+.secondary-a-1 { background-color: #1144AA }
+.secondary-a-2 { background-color: #29467F }
+.secondary-a-3 { background-color: #05296E }
+.secondary-a-4 { background-color: #4575D4 }
+.secondary-a-5 { background-color: #6B8FD4 }
+
+.secondary-b-1 { background-color: #14D100 }
+.secondary-b-2 { background-color: #329D27 }
+.secondary-b-3 { background-color: #0D8800 }
+.secondary-b-4 { background-color: #4AE83A }
+.secondary-b-5 { background-color: #74E868 }
+
+.complement-1 { background-color: #FF6F00 }
+.complement-2 { background-color: #BF6E30 }
+.complement-3 { background-color: #A64800 }
+.complement-4 { background-color: #FF9340 }
+.complement-5 { background-color: #FFB073 }

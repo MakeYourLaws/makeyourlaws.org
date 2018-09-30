@@ -1,2 +1,5 @@
 ---
+title: Bitcoin
 ---
+
+Content here!
